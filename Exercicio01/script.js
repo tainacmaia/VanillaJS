@@ -18,17 +18,14 @@ const docXML = parser.parseFromString(
     </produto>
 </produtos>`,'text/xml');
 
-const produtos = document.querySelectorAll('div[data-item]')
-
 const section = document.createElement('section');
-let count = 1;
 
+const div = document.createElement('div')
 const h1 = document.createElement('h1')
 const p = document.createElement('p')
 const span = document.createElement('span')  
 
-for (let i = 0; i < produtos.length; i++) {  
-  const div = document.createElement('div')
+for (let i = 0; i < docXML.getElementsByTagName('produto').length; i++) {  
   section.appendChild(div)
   
   h1.innerText = docXML.getElementsByTagName('titulo')[i].textContent
@@ -40,9 +37,7 @@ for (let i = 0; i < produtos.length; i++) {
   span.innerText = docXML.getElementsByTagName('preco')[i].textContent
   div.appendChild(span)
 
-  document.body.childNodes[1].childNodes[count].innerHTML = div.innerHTML;
-
-  count +=2
+  document.body.getElementsByTagName('div')[i].innerHTML = div.innerHTML;
 }
 
 
