@@ -94,9 +94,10 @@ for (let i=0; i<animais.length; i++) {
     corpo.appendChild(tr);
 }
 
-const tr = document.createElement('tr')
-tr.innerText = `Total de animais: ${totalAnimais}`;
-rodape.appendChild(tr)
+const td = document.createElement("td");
+td.innerText = `Total de animais: ${totalAnimais}`;
+td.setAttribute("colspan", "4");
+rodape.appendChild(td)
 
 tabela.appendChild(cabecalho);
 tabela.appendChild(corpo);
@@ -108,14 +109,12 @@ Object.assign(tabela.style, {
     textAlign: 'center',
     })
 
-Object.assign(tabela.childNodes[0].style, {
+Object.assign(cabecalho.style, {
     'font-size': '35px',
 })
 
 for (let i=0; i<animais.length; i++) {
-    document.getElementsByTagName("tr")[i].childNodes[1].style.cssText = `
-    font-style: italic
-`;
+    document.getElementsByTagName("tr")[i].childNodes[1].style.cssText = 'font-style: italic';
 }
 
 document.querySelector('table').style.border = 'solid 1px black';
