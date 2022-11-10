@@ -23,19 +23,20 @@ const produtos = document.querySelectorAll('div[data-item]')
 const section = document.createElement('section');
 let count = 1;
 
+const h1 = document.createElement('h1')
+const p = document.createElement('p')
+const span = document.createElement('span')  
+
 for (let i = 0; i < produtos.length; i++) {  
   const div = document.createElement('div')
   section.appendChild(div)
-
-  let h1 = document.createElement('h1')
+  
   h1.innerText = docXML.getElementsByTagName('titulo')[i].textContent
   div.appendChild(h1)
 
-  let p = document.createElement('p')
   p.innerText = docXML.getElementsByTagName('descricao')[i].textContent
   div.appendChild(p)
 
-  let span = document.createElement('span')
   span.innerText = docXML.getElementsByTagName('preco')[i].textContent
   div.appendChild(span)
 

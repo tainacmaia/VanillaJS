@@ -113,7 +113,13 @@ Object.assign(tabela.childNodes[0].style, {
 })
 
 for (let i=0; i<animais.length; i++) {
-    Object.assign(tabela.childNodes[1].childNodes[i].childNodes[1].style, {
-        'font-style': 'italic',
-    })  
+    document.getElementsByTagName("tr")[i].childNodes[1].style.cssText = `
+    font-style: italic
+`;
 }
+
+document.querySelector('table').style.border = 'solid 1px black';
+    const celulas = document.querySelectorAll('td');
+    for(let i = 0; i < celulas.length; i++){
+        celulas[i].style.border = 'solid 1px black';
+    }
