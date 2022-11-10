@@ -18,16 +18,12 @@ const docXML = parser.parseFromString(
     </produto>
 </produtos>`,'text/xml');
 
-const section = document.createElement('section');
-
 const div = document.createElement('div')
 const h1 = document.createElement('h1')
 const p = document.createElement('p')
 const span = document.createElement('span')  
 
-for (let i = 0; i < docXML.getElementsByTagName('produto').length; i++) {  
-  section.appendChild(div)
-  
+for (let i = 0; i < docXML.getElementsByTagName('produto').length; i++) {   
   h1.innerText = docXML.getElementsByTagName('titulo')[i].textContent
   div.appendChild(h1)
 
