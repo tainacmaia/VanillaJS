@@ -1,0 +1,247 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: url('../assets/bookstore.jpg') no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 80%);
+    color: white;
+    height: 40px;
+}
+
+.headerNav {
+    display: flex;
+    align-items: center;
+}
+
+.headerNav ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+.headerNav li {
+    margin: 20px;
+}
+
+.headerNav li:hover {
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.welcome, .about-me, .books {
+    background-color: rgb(0, 0, 0, 70%);
+    color: white;
+    padding: 20px;
+    animation: fadeIn 1s; 
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.welcome {
+    margin-top: 30vh;  
+}
+
+.welcome h1 {
+    font-size: 40pt;
+    margin-bottom: 20px;
+}
+
+.welcome h2 {
+    font-size: 30pt;
+}
+
+.about-me {
+    width: 60%;
+}
+
+.about-me img {
+    width: 40%;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+
+.about-me p {
+    font-size: 25pt;
+}
+
+#main-div {
+    min-width: 70%;
+}
+
+.books {
+    display: flex;
+    min-width: 70vw;
+    justify-content: space-around;    
+}
+
+.books h1 {
+    font-size: 30pt;
+    margin-bottom: 20px;
+}
+
+.books-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.search-books {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 500px;    
+}
+
+
+.last-search {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid white;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+#books-table {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid white;
+    max-width: 500px;
+}
+
+td img {
+    height: 15px;
+}
+
+td button {
+    margin: 5px;    
+}
+
+a {
+    margin-top: 20px;
+}
+
+a:hover {
+    cursor: pointer;
+    color: rgb(204, 183, 138);
+    text-decoration: underline dotted white 1px;
+}
+
+a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    background-color: rgb(66, 66, 66);
+    border-color: rgb(211, 211, 211, 80%);
+    border-radius: 20px;
+    color: white;
+    padding: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(41, 41, 41);
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+#edit-div {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 95%);
+    border: 1px solid gray;
+    color: white;
+    width: 330px;
+    position: fixed;
+    margin-top: 20vh;
+    z-index: 1;
+    padding: 20px;
+}
+
+#edit-div input {
+    width: 300px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#edit-div button {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 700px) {
+    .books {
+        flex-direction: column;
+    }
+
+    .last-search {
+        border-left: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    td:nth-child(4) {
+        display: none;
+    }
+
+    th:nth-child(4) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    td:nth-child(3) {
+        display: none;
+    }
+
+    th:nth-child(3) {
+        display: none;
+    }
+
+    .search-books {
+        flex-direction: column;  
+        align-items: center;  
+    }
+
+    button, select, input {
+        width: fit-content;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #edit-div {
+        width: 230px;
+    }
+    
+    #edit-div input {
+        width: 200px;
+    }    
+}
